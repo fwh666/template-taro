@@ -1936,46 +1936,55 @@
     "@tarojs/runtime" "3.6.21"
     "@tarojs/shared" "3.6.21"
 
-"@tarojs/binding-darwin-arm64@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/binding-darwin-arm64/-/binding-darwin-arm64-3.6.21.tgz#17fb828371532b0a1f74ecc2ded18f91dc3cedc2"
-  integrity sha512-3TuGvFep2hmlxoL2LYMIECXFW/Ch9XMzy1b0Em83BGrXQG/eSy4exRZ9W+oODqf6O82ZP/mI5TTHMWzHiAzymw==
-
-"@tarojs/binding-darwin-x64@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/binding-darwin-x64/-/binding-darwin-x64-3.6.21.tgz#6720dcf98d9d4b06d0c98ffc02f7696b5ffa0150"
-  integrity sha512-w3AtfxrHdnOl2wHhuIhqLlZJM47Xmfx9lB3myZdOMWV04i6YreyqGD3jXpQy+ck+RPBdetaggQQc7KyDqq6uxA==
-
-"@tarojs/binding-linux-x64-gnu@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/binding-linux-x64-gnu/-/binding-linux-x64-gnu-3.6.21.tgz#6369099de1d31c679fed94d9494116326fb0a15d"
-  integrity sha512-Ogg8a3nDk0zVWm8QJOF7Mkt1wNSjo9Qz1T1+hW14JmYjv2PTWW9G1WyHyOEwelDk5fhPZw1n+lcVwuGiETturQ==
-
-"@tarojs/binding-win32-x64-msvc@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/binding-win32-x64-msvc/-/binding-win32-x64-msvc-3.6.21.tgz#977416418cc8f2aea5043cc76fc7ab789a75f3ca"
-  integrity sha512-R2MgL986T6W+24M2L4aD1kkoD+FVFlCqB05jmiBGwNvdgr1YNV7B0QyWh45+J2g24eGQXBlEPdwv8SGRpK3ysg==
-
-"@tarojs/binding@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/binding/-/binding-3.6.21.tgz#7e9351d1454a9e4702df99c3bd11a2b318e66bfb"
-  integrity sha512-gLCAfLKvdrADnQUoVkYFyNVxgWMuq5YBcp6YS2yo4/FqfH54Uc67LNFn3xLovXxQSeZJbCK5HLCe559G3vhrrw==
-  optionalDependencies:
-    "@tarojs/binding-darwin-arm64" "3.6.21"
-    "@tarojs/binding-darwin-x64" "3.6.21"
-    "@tarojs/binding-linux-x64-gnu" "3.6.21"
-    "@tarojs/binding-win32-x64-msvc" "3.6.21"
-
-"@tarojs/cli@3.6.21":
-  version "3.6.21"
-  resolved "https://r.cnpmjs.org/@tarojs/cli/-/cli-3.6.21.tgz#e683a9fc02563530951a11c00d85fdf7e312df0d"
-  integrity sha512-2afCwf6WuD+0/zrrBgKPFXLK1WItMB5JfrWg+tpRcXM8Oui9B65yae0lW0tAAEn+2hQvkmahqgi+o3pftovylg==
+"@tarojs/api@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/api/-/api-3.6.23.tgz#f9eba394c27d915b081e942e9344c60f2be844d6"
+  integrity sha512-lY6+S5P3rVMM7wmsQ1XEtE5o7haS/08G3Haz4EJrg7hmg3IKrC/ju4hypEq+wd4vfPY6hC3AlqMm1zcOyjuDZg==
   dependencies:
-    "@tarojs/binding" "3.6.21"
-    "@tarojs/helper" "3.6.21"
+    "@babel/runtime" "^7.14.5"
+    "@tarojs/runtime" "3.6.23"
+    "@tarojs/shared" "3.6.23"
+
+"@tarojs/binding-darwin-arm64@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/binding-darwin-arm64/-/binding-darwin-arm64-3.6.23.tgz#e67859accd8a1aaefd3b1bc4a539d5aa3f1807a8"
+  integrity sha512-MVKXZ1pljjF61eC0/GDq9PyCjLoZjyn06s23lO+0XQrMPcRKbsYSvXDMjBBTCagS6a1B9Qp+Ctyhpe8jcm2bWQ==
+
+"@tarojs/binding-darwin-x64@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/binding-darwin-x64/-/binding-darwin-x64-3.6.23.tgz#d0aa23d2e4dfdebaf381ed4653fb7c12a1628d12"
+  integrity sha512-3RDrWHFKK2TGlvnf4SNvPsBAyIp3QS2t1t7e0rG1AGXPXHgdASv/62slJJ54EwOe0fX4n55XAp6tMkB3ROXb8A==
+
+"@tarojs/binding-linux-x64-gnu@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/binding-linux-x64-gnu/-/binding-linux-x64-gnu-3.6.23.tgz#7d37f1e76a0540a41184755926addb54db23c1ad"
+  integrity sha512-dJGWUjpCyxirUDfSgtHFDEHdFEbxNCKEn3pxsIvuLsQG9/c2qobwfjFo0x40eLMoMeF8a4/aUfUOUA7tI71H/g==
+
+"@tarojs/binding-win32-x64-msvc@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/binding-win32-x64-msvc/-/binding-win32-x64-msvc-3.6.23.tgz#6dac8584687f27d7f0e7fdfd291c252e8640118d"
+  integrity sha512-oq819KIzdDqVNWVeKUE0K0aU/2CUsf1fFrmftZgi9sgT8ZzHdYpagsKh7sb3tgN01SGtyg2qZ8SJmT9ntOwEnw==
+
+"@tarojs/binding@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/binding/-/binding-3.6.23.tgz#4f885ed4c6298bba2fc21c506a94a11e8d0d5070"
+  integrity sha512-PsZIdLGrgyI+BBxLSQzKVpWuCX/PLJXY8hjlAwL9a1AgFS3+JQnQ7RQxwzsrTPt6yqt2R0ZFjEw08rDnDMKSyQ==
+  optionalDependencies:
+    "@tarojs/binding-darwin-arm64" "3.6.23"
+    "@tarojs/binding-darwin-x64" "3.6.23"
+    "@tarojs/binding-linux-x64-gnu" "3.6.23"
+    "@tarojs/binding-win32-x64-msvc" "3.6.23"
+
+"@tarojs/cli@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/cli/-/cli-3.6.23.tgz#8ba4ce609906c1f6be77bda51ed1bbdc9dc80772"
+  integrity sha512-UzcGGfHJJv6eKutz+3nYRUVyccgWOHnslJyWaQClWfjeJ4pFj9yBFHZDzmlXCR2Zb9P6U799sG+76cMSLIPsIg==
+  dependencies:
+    "@tarojs/binding" "3.6.23"
+    "@tarojs/helper" "3.6.23"
     "@tarojs/plugin-doctor" "^0.0.11"
-    "@tarojs/service" "3.6.21"
-    "@tarojs/shared" "3.6.21"
+    "@tarojs/service" "3.6.23"
+    "@tarojs/shared" "3.6.23"
     adm-zip "^0.4.13"
     cli-highlight "^2.1.11"
     download-git-repo "^2.0.0"
@@ -2007,6 +2016,18 @@
     memoize-one "^6.0.0"
     postcss "^8.4.18"
 
+"@tarojs/components-advanced@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/components-advanced/-/components-advanced-3.6.23.tgz#429b01646bb9776bedb5b4c14d4fa70bdea934e4"
+  integrity sha512-krUy39pCKyrCdxZ9t22bln0NIck1IHA8TDQzK/xk8G1y/zvv5KNqLVHi5PiUEpUnFYXpz4o/KQ9mX67l2N4xQA==
+  dependencies:
+    "@tarojs/components" "3.6.23"
+    classnames "^2.2.5"
+    csstype "^3.1.1"
+    memoize-one "^6.0.0"
+    postcss "^8.4.18"
+    tslib "^2.6.2"
+
 "@tarojs/components-react@3.6.21":
   version "3.6.21"
   resolved "https://r.cnpmjs.org/@tarojs/components-react/-/components-react-3.6.21.tgz#2ca13334f3e2f601f17b7eae5ea140e380e8d708"
@@ -2037,10 +2058,57 @@
     swiper "6.8.0"
     weui "^1.1.2"
 
+"@tarojs/components@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/components/-/components-3.6.23.tgz#40877ff066f9f8cb9694cc934d3110e5b069eec9"
+  integrity sha512-XN/h+qXXbuTdlVUQm5swzzHiF56mjv0VRL73OriS2AV1BUFQoyhSGS4FshkWGl2Jbht0Uv2+KqG29d2ovnzBbw==
+  dependencies:
+    "@stencil/core" "^2.22.2"
+    "@tarojs/components-advanced" "3.6.23"
+    "@tarojs/taro" "3.6.23"
+    classnames "^2.2.5"
+    hls.js "^1.1.5"
+    resolve-pathname "^3.0.0"
+    swiper "6.8.0"
+    tslib "^2.6.2"
+
 "@tarojs/helper@3.6.21":
   version "3.6.21"
   resolved "https://r.cnpmjs.org/@tarojs/helper/-/helper-3.6.21.tgz#b89a8e4c0fe8907b65edd7236143e28a046e490c"
   integrity sha512-Y5JzO69ZliSzHp60I4S4NhOX+Y7Yv9sPyhwLqGNSxFE6hpjdn0kJ9BB3rL21I8kayARqg/eO33ESOyrhZcgdBg==
+  dependencies:
+    "@babel/core" "^7.14.5"
+    "@babel/parser" "^7.14.5"
+    "@babel/plugin-proposal-decorators" "^7.14.5"
+    "@babel/plugin-proposal-object-rest-spread" "^7.14.5"
+    "@babel/plugin-transform-runtime" "^7.14.5"
+    "@babel/preset-env" "^7.14.5"
+    "@babel/preset-typescript" "^7.14.5"
+    "@babel/register" "^7.14.5"
+    "@babel/runtime" "^7.14.5"
+    "@babel/traverse" "^7.14.5"
+    "@swc/core" "1.3.96"
+    "@swc/register" "0.1.10"
+    ansi-escapes "^4.3.2"
+    chalk "3.0.0"
+    chokidar "^3.3.1"
+    cross-spawn "^7.0.3"
+    debug "4.3.4"
+    dotenv "^16.0.3"
+    dotenv-expand "^9.0.0"
+    esbuild "~0.19.5"
+    find-yarn-workspace-root "2.0.0"
+    fs-extra "^8.0.1"
+    lodash "^4.17.21"
+    require-from-string "^2.0.2"
+    resolve "^1.22.0"
+    supports-hyperlinks "^2.2.0"
+    yauzl "2.10.0"
+
+"@tarojs/helper@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/helper/-/helper-3.6.23.tgz#96f1f269646eca95301735abf375031b859454d2"
+  integrity sha512-0Fce1QlsON93eMMqOQSQjY1OO1N6mWvVvwOvbrDbysRvJEOis1+XZ1zsGcagInsyksKVYQaPX021+MRU7IjKgw==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/parser" "^7.14.5"
@@ -2278,6 +2346,14 @@
     "@tarojs/shared" "3.6.21"
     lodash-es "4.17.21"
 
+"@tarojs/runtime@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/runtime/-/runtime-3.6.23.tgz#9ce1491c66eb5d20a92787086d3b9f9c6c900902"
+  integrity sha512-6s8qd4EWvM5YA3qe6t/MixfeP1XF9DcWSH8UnhG49hyLN5y0sBEUObn7tn761xvSiv96Myx87gVo5M4qPtsGJw==
+  dependencies:
+    lodash-es "4.17.21"
+    tslib "^2.6.2"
+
 "@tarojs/service@3.6.21":
   version "3.6.21"
   resolved "https://r.cnpmjs.org/@tarojs/service/-/service-3.6.21.tgz#21a205a48e41466c0c9a0780365f6cbe188e951c"
@@ -2293,10 +2369,28 @@
     tapable "^1.1.3"
     webpack-merge "^4.2.2"
 
+"@tarojs/service@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/service/-/service-3.6.23.tgz#638020169a7a9330646467f10f20f9c161ffa5d6"
+  integrity sha512-lRxgioi1ALKpFySs8pZLAnqT1Jk1wygHGVQ4JDpaMrP4XMVaKLARX/1VmeVxgDJQ82IlP3++LsJEKOdwqL3usQ==
+  dependencies:
+    "@tarojs/helper" "3.6.23"
+    joi "^17.6.0"
+    lodash "^4.17.21"
+    ora "^5.0.0"
+    resolve "^1.22.0"
+    tapable "^1.1.3"
+    webpack-merge "^4.2.2"
+
 "@tarojs/shared@3.6.21":
   version "3.6.21"
   resolved "https://r.cnpmjs.org/@tarojs/shared/-/shared-3.6.21.tgz#5638dc5439ec63009aedc0369b16fb1fca71a12c"
   integrity sha512-pPr77YJ43t0SaoO/tGmFUgrOniiNcbbrhtBqGW8GEvC5fgjXyPyX2+Yt9+0Az3afDLXbIDolqWVnYy+F/gitwQ==
+
+"@tarojs/shared@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/shared/-/shared-3.6.23.tgz#d71c7f3607f076547c6b6388192b42e260b85d43"
+  integrity sha512-bn7cxSN2+QMMALnc5AYASiRYltgJOgWDkgL7NudeEInA/FeD9BHGOBafrtXSzBxW6wADkRNmOKlIfWts6sOphg==
 
 "@tarojs/taro-h5@3.6.21":
   version "3.6.21"
@@ -2333,6 +2427,13 @@
   dependencies:
     "@tarojs/api" "3.6.21"
     "@tarojs/runtime" "3.6.21"
+
+"@tarojs/taro@3.6.23":
+  version "3.6.23"
+  resolved "https://r.cnpmjs.org/@tarojs/taro/-/taro-3.6.23.tgz#c5b7c29e76c8f1176d73715837ae73e1014d12e0"
+  integrity sha512-8KppYcg5xBndj+iRZEwa5A5hblTr2QZeShTMRxVrSp3HbLq3dMNRyeNvmFW0QOvQtatxGin/o7bA8ijoDdwkUg==
+  dependencies:
+    "@tarojs/api" "3.6.23"
 
 "@tarojs/test-utils-dom@0.1.1":
   version "0.1.1"

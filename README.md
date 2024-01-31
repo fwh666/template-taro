@@ -1,3 +1,16 @@
+# fwh:
+## 本地开发环境：
+1. Node 18.17.0
+2. Taro 3.6.23
+3. Taro CLI 3.6.23
+4. npm 8.19.2
+5. yarn 1.22.19
+6. Git 2.38.1
+7. VSCode 1.72.2
+8. GitKraken 8.1.0
+9. VSCode 插件：GitLens
+
+
 # Taro-Starter
 
 [![action][ci-image]][ci-url] [![Release Date][rle-image]][rle-url] [![GitHub last commit][last-commit-image]][repository-url] [![tag][tag-image]][rle-url] [![license][license-image]][repository-url]

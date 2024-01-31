@@ -1,4 +1,4 @@
-import HomeRegistry from '@/components/home/homeRegistry'
+import BirthdayPage from '@/components/home/swiper/birthday'
 import { View } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import './index.scss'
@@ -11,7 +11,11 @@ export default function Index() {
   return (
     <View className="index">
       {/* <Text>Hello world!</Text> */}
-      <HomeRegistry />
+  <BirthdayPage />
+      {/* <MySwiper /> */}
+      {/* <LoginPage/> */}
+      {/* <HomeRegistry /> */}
+      {/* <PrivacyPolicy /> */}
     </View>
   )
 }
