@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components'
 import React from 'react'
-import BirthDatePicker from './dateSelect'
+import BirthDatePicker from './birthDatePicker'
 
 const BirthdayPage: React.FC = () => {
   const handleYearChange = (selectedYear: string) => {
