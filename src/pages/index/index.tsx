@@ -1,6 +1,8 @@
+import AvaImage from '@/components/home/swiper/avaImage'
 import BirthdayPage from '@/components/home/swiper/birthday'
 import Educiton from '@/components/home/swiper/education'
 import Gender from '@/components/home/swiper/gender'
+import Location from '@/components/home/swiper/location'
 import { View } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import './index.scss'
@@ -13,7 +15,9 @@ export default function Index() {
   return (
     <View className="index">
       {/* <Text>Hello world!</Text> */}
-      <Gender/>
+      <AvaImage />
+      <Location />
+      <Gender />
       <Educiton />
       <BirthdayPage />
       {/* <MySwiper /> */}
