@@ -19,16 +19,13 @@ export default function HomeRegistry() {
     setIsOpenedPrivacy(data)
     //按钮勾选隐私
     setIsAgreePrivacy(true)
-  // 同意隐私-调用接口微信登录-跳转首页
-    if(isAgreePrivacy){
-      console.log('agree privacy');
+    // 同意隐私-调用接口微信登录-跳转首页
+    if (isAgreePrivacy) {
+      console.log('agree privacy')
       // todo-fwh-微信登录
-      // TODO 你的注释
-      
-      
-    }else{
-      console.log('no agree privacy');
-      
+      // TODO 你的注释-登录成功-跳转到下一个页面滑动页面 如果之前没有注册过数据，就滑动，有就跳转到完善资料页
+    } else {
+      console.log('no agree privacy')
     }
   }
 
@@ -44,7 +41,7 @@ export default function HomeRegistry() {
                 alt="Logo of a fox wearing a red scarf"
                 className="mx-auto"
                 height="64"
-                src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-mYq6lDsyFdzwacdtrtb3ZUBD.png?st=2024-01-20T10%3A44%3A28Z&amp;se=2024-01-20T12%3A44%3A28Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-01-19T19%3A43%3A36Z&amp;ske=2024-01-20T19%3A43%3A36Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=AT/UNfJadI/HnNN3a%2BCpA0mgdn8NiwPRSvjojen5SUM%3D"
+                src="https://img0.baidu.com/it/u=3232582821,3516640051&fm=253&fmt=auto&app=138&f=JPEG?w=625&h=500"
                 width="64"
               />
               <h1 className="text-lg font-semibold mt-2">二狗健身第三年目标平台</h1>
