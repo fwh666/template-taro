@@ -1,36 +1,84 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Educiton: React.FC = () => {
+  const [selectedEducation, setSelectedEducation] = useState<string>('')
+  const handleClick = (education: string) => {
+    setSelectedEducation(education)
+    console.log('选择了', education)
+  }
   return (
     <div>
       <div className="px-4 py-2">
-
-        <div className="flex justify-between items-center mt-6">
-          <i className="fas fa-chevron-left text-gray-600"></i>
-          <i className="fas fa-graduation-cap text-gray-600"></i>
-          <i className="fas fa-ellipsis-h text-gray-600"></i>
-        </div>
-
         <div className="text-center mt-6">
+          <img
+            className="inline-block w-16 h-16 bg-gray-200 rounded-full"
+            src="../../public/svg/birthday-cake-svgrepo-com.svg"
+          />
           <h1 className="text-2xl font-semibold">你的学历是</h1>
         </div>
 
         <div className="mt-8 space-y-4">
           <div className="bg-white rounded-lg p-4 shadow">
-            <input type="text" placeholder="博士" className="w-full text-center bg-transparent focus:outline-none" />
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '博士' ? 'bg-gray-500 text-white' : ''}`}
+              onClick={() => {
+                handleClick('博士')
+              }}>
+              博士
+            </div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow">
-            <input type="text" placeholder="硕士" className="w-full text-center bg-transparent focus:outline-none" />
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '硕士' ? 'bg-gray-500 text-white' : ''}`}
+              onClick={() => {
+                handleClick('硕士')
+              }}>
+              硕士
+            </div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow">
-            <input type="text" placeholder="本科" className="w-full text-center bg-transparent focus:outline-none" />
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '本科' ? 'bg-gray-500 text-white' : ''}`}
+              onClick={() => {
+                handleClick('本科')
+              }}>
+              本科
+            </div>
           </div>
-        </div>
-
-        <div className="flex justify-center mt-8">
-          <button className="rounded-full bg-blue-500 p-4 text-white">
-            <i className="fas fa-arrow-right"></i>
-          </button>
+          <div className="bg-white rounded-lg p-4 shadow">
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '大专' ? 'bg-gray-500 text-white' : ''}`}
+              onClick={() => {
+                handleClick('大专')
+              }}>
+              大专
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow">
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '高中' ? 'bg-gray-500 text-white' : ''}`}
+              onClick={() => {
+                handleClick('高中')
+              }}>
+              高中
+            </div>
+          </div>
+          <div
+            className="bg-white rounded-lg p-4 shadow"
+            onClick={() => {
+              handleClick('初中及以下')
+            }}>
+            <div
+              className={`w-full text-center bg-transparent focus:outline-none
+            ${selectedEducation === '初中及以下' ? 'bg-gray-500 text-white' : ''}`}>
+              初中及以下
+            </div>
+          </div>
         </div>
       </div>
     </div>

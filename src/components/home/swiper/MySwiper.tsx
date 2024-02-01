@@ -13,7 +13,7 @@ const MySwiper: React.FC = () => {
     // 例如禁止继续滑动或者执行其他操作
     console.log('滑动到了最后')
   }
-  const [current, setCurrent] = useState(1)
+  const [current, setCurrent] = useState(2)
 
   const handleNext = () => {
     // 计算下一个选项卡的索引
