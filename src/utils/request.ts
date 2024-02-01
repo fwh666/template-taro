@@ -1,7 +1,7 @@
-import Taro from '@tarojs/taro'
 import { BASE_URL } from '@/config/app.config'
 import { HTTP_STATUS } from '@/config/constant'
-import { toast, log } from './logger'
+import Taro from '@tarojs/taro'
+import { log, toast } from './logger'
 
 export interface RequestInfo {
   url: string
