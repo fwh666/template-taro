@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import React, { useState } from 'react'
-import RegionPickerModal from './cityCascader'
+import RegionPickerModal from './regionPickerModal'
 const cityData = require('./city.json')
 // import { pcaTextArr } from 'element-china-area-data'
 // const cityData = pcaTextArr

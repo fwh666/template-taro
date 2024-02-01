@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { AtButton } from 'taro-ui'
 
 const RegionPickerModal = () => {
-  const [region, setRegion] = useState(['浙江省', '杭州市', '西湖区'])
+  const [region, setRegion] = useState(['北京市', '北京市', '东城区'])
   const [modalVisible, setModalVisible] = useState<boolean>(false)
 
   const handleRegionChange = (e) => {
