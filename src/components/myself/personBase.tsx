@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import React from 'react'
 const PersonBase: React.FC = () => {
   const toBaseInfo = () => {
-    Taro.redirectTo({
+    Taro.navigateTo({
       url: '/pages/myself/personBaseInfoPage'
     })
   }

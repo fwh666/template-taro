@@ -3,7 +3,9 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/myself/personBaseInfoPage',
     'pages/myself/personBaseAvaPage',
-    'pages/private/privatePage'
+    'pages/myself/PersonBasePage',
+    'pages/private/privatePage',
+    'pages/commend/commend'
   ],
   window: {
     backgroundTextStyle: 'light',

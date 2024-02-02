@@ -1,4 +1,4 @@
-import HomeRegistry from '@/components/home/homeRegistry';
+import LoginRegistry from '@/components/login/loginRegistry';
 import React from 'react';
 
 interface ChildProps {
@@ -10,7 +10,7 @@ const LoginPage: React.FC<ChildProps> = (porps: any) => {
   
   return (
     <div>
-      <HomeRegistry isAgreed={porps.isAgreed} />
+      <LoginRegistry isAgreed={porps.isAgreed} />
     </div>
   )
 }

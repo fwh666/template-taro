@@ -1,25 +1,31 @@
 
 import Taro from '@tarojs/taro';
-import React from 'react';
+import React, { useState } from 'react';
 
 const PersonBaseInfo: React.FC = () => {
+    const[nickName,setNickName]=useState<string>('');
     const toPersonAva = () => {
+        savaData();
         Taro.redirectTo({
             url: '/pages/myself/personBaseAvaPage'
         })
+    }
+    const handleNickName = () => {
+        Taro.showModal({
+            title: '修改昵称',
+            content: '修改昵称',
+            confirmText: '确认',
+            cancelText: '取消',
+            showCancel: true,
+        })
+    }
+    const savaData = () => {
+        console.log(nickName);
     }
   return (
     <div>
       <div className="px-4">
         <div className="pt-6 pb-4">
-            <div className="flex justify-between items-center">
-                <div className="text-gray-600">16:39</div>
-                <div className="flex items-center">
-                    <div className="mx-1 text-gray-600">信号</div>
-                    <div className="mx-1 text-gray-600">Wi-Fi</div>
-                    <div className="mx-1 text-gray-600">电池</div>
-                </div>
-            </div>
             <div className="text-2xl font-medium text-center text-gray-800 mt-2">个人信息页</div>
             <div className="text-sm text-center text-gray-600 mt-2">完善三步走可认证他人</div>
             <div className="text-xs text-center text-gray-500 mt-1">一勾APP是一个严谨、全面的交友平台，请认真填写资料</div>
@@ -33,7 +39,8 @@ const PersonBaseInfo: React.FC = () => {
             <div className="mt-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <div className="text-gray-800">昵称</div>
-                    <div className="text-gray-500">一狗用户6697 ></div>
+                    {/* <div className="text-gray-500" onClick={handleNickName}>一狗用户6697</div> */}
+                    <input className='text-gray-500' placeholder='用户9527' onChange={() => {setNickName}}/>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <div className="text-gray-800">性别</div>

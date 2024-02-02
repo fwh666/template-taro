@@ -5,49 +5,79 @@ interface ChildProps {
   isAgreed: boolean
 }
 
-// export default function HomeRegistry() {
-const HomeRegistry: React.FC<ChildProps> = (porps: any) => {
+const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
   console.log('isAgreed:', porps.isAgreed)
   const isAgreed = porps.isAgreed
   const [isOpenedPrivacy, setIsOpenedPrivacy] = useState(false)
   const [isAgreePrivacy, setIsAgreePrivacy] = useState<boolean>(false)
 
+  const toCommend = () => {
+    Taro.navigateTo({
+      url: '/pages/commend/commend'
+    })
+  }
+  const toPersonBase = () => {
+    Taro.navigateTo({
+      url: '/pages/myself/personBasePage'
+    })
+  }
+  const toPrivatePage = () => {
+    Taro.navigateTo({
+      url: '/pages/private/privatePage'
+    })
+  }
+
   const handleOpenPrivacy = () => {
     console.log('打开隐私提示')
     // 弹出隐私同意窗口
-    Taro.redirectTo({
-      url: '/pages/private/privatePage'
-    })
+    toPrivatePage()
+    // Taro.redirectTo({
+    //   url: '/pages/private/privatePage'
+    // })
   }
 
   // 同意后-微信登录
   if (isAgreed) {
     console.log('开始微信登录')
+    // 校验是否已经登录态
+    const loginCode = Taro.getStorageSync('loginCode')
+    console.log('loginCode:', loginCode)
+    if (loginCode) {
+      // 已经登录态
+      console.log('已经登录态')
+      toPersonBase()
+    }
+
     Taro.login({
       success: function (res) {
         if (res.code) {
           console.log('code:', res.code)
+          // 登录成功-存储-跳转首页tar
+          Taro.setStorageSync('loginCode', 'loginCode')
+          toCommend()
           //发起网络请求
-          Taro.request({
-            url: 'http://127.0.0.1:8080/xd/wx/login',
-            method: 'POST',
-            header: {
-              'content-type': 'application/json'
-            },
-            data: {
-              code: res.code
-            },
-            success: function (res) {
-              console.log(res.data)
-              const openid = res.data.openid
-              const session_key = res.data.session_key
-              console.log(openid)
-              console.log(session_key)
-            },
-            fail: function (err) {
-              console.log(err)
-            }
-          })
+          // Taro.request({
+          //   url: 'http://127.0.0.1:8080/xd/wx/login',
+          //   method: 'POST',
+          //   header: {
+          //     'content-type': 'application/json'
+          //   },
+          //   data: {
+          //     code: res.code
+          //   },
+          //   success: function (res) {
+          //     console.log(res.data)
+          //     const openid = res.data.openid
+          //     const session_key = res.data.session_key
+          //     console.log(openid)
+          //     console.log(session_key)
+          //     // 成功后调整推荐页
+          //     toCommend()
+          //   },
+          //   fail: function (err) {
+          //     console.log(err)
+          //   }
+          // })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
@@ -105,4 +135,4 @@ const HomeRegistry: React.FC<ChildProps> = (porps: any) => {
   )
 }
 
-export default HomeRegistry
+export default LoginRegistry
