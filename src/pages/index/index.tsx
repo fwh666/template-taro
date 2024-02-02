@@ -1,12 +1,19 @@
-import PersonBase from '@/components/myself/personBase'
 import { View } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import { useLoad, useRouter } from '@tarojs/taro'
+import LoginPage from '../login/loginPage'
 import './index.scss'
 
 export default function Index() {
   useLoad(() => {
     console.log('Page loaded.')
   })
+
+  const router = useRouter()
+  const isAgree: any = router.params.isAgree
+  // console.log(isAgree)
+  // const parentData = 'Hello from parent';
+
+  //   const a: any = getCurrentInstance().router.params.id;
 
   return (
     <View className="index">
@@ -17,13 +24,14 @@ export default function Index() {
       <Educiton />
       <BirthdayPage /> */}
       {/* <MySwiper /> */}
-      <PersonBase />
+      {/* <PersonBase /> */}
       {/* <PersonBaseInfo />
       <PersonBaseAva /> */}
 
       {/* <Gender /> */}
       {/* <LoginPage/> */}
       {/* <HomeRegistry /> */}
+      <LoginPage isAgreed={isAgree} />
       {/* <PrivacyPolicy /> */}
     </View>
   )
