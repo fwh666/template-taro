@@ -26,16 +26,28 @@ const HomeRegistry: React.FC<ChildProps> = (porps: any) => {
     Taro.login({
       success: function (res) {
         if (res.code) {
-          console.log('code:', res.code);
-          
+          console.log('code:', res.code)
           //发起网络请求
           Taro.request({
-            url: 'https://test.com/onLogin',
+            url: 'http://127.0.0.1:8080/xd/wx/login',
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'
+            },
             data: {
               code: res.code
+            },
+            success: function (res) {
+              console.log(res.data)
+              const openid = res.data.openid
+              const session_key = res.data.session_key
+              console.log(openid)
+              console.log(session_key)
+            },
+            fail: function (err) {
+              console.log(err)
             }
           })
-          console.log('登录成功，跳转个人主页')
         } else {
           console.log('登录失败！' + res.errMsg)
         }
