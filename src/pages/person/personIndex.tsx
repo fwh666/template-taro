@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import PersonBasePage from './personBasePage'
 import PersonViewPage from './personViewPage'
 const PersonIndex: React.FC = () => {
-  const [isPersonComplete, setPersonComplete] = useState<boolean>(true)
+  const [isPersonComplete, setPersonComplete] = useState<boolean>(false)
 
   return (
-    <div>
+    <div className="bg-gradient">
       {isPersonComplete ? (
         <View>
           <PersonViewPage />

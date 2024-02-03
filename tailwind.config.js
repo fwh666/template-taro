@@ -4,6 +4,16 @@ module.exports = {
   // 比如你使用 vue3 项目，你就需要把 vue 这个格式也包括进来
   // 不在 content glob表达式中包括的文件，在里面编写tailwindcss class，是不会生成对应的css工具类的
   content: ['./src/index.html', './src/**/*.{html,js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        cyan: '#00FFFF',
+      },
+      fontFamily: {
+        'font-kai': ['"楷体"', 'SimKai', 'KaiTi', 'serif']
+      }
+    }
+  },
   // content: [
   //   './src/index.html',
   //   './pages/**/*.{html,js}',

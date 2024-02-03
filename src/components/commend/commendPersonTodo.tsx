@@ -9,23 +9,22 @@ const CommendPersonTodo: React.FC = () => {
     })
   }
   return (
-    <div>
-      <div className="max-w-sm mx-auto">
+    <div className="bg-gradient">
+      <div className="contents">
         <div className="text-center py-4">
           <div className="mt-2">
             <h1 className="text-2xl font-bold">完善资料和认证</h1>
             <p className="text-gray-600 mt-2">营造靠谱交友环境</p>
           </div>
         </div>
-
-        <div className="flex justify-between px-4 mb-4">
-          <div className="bg-white rounded-lg shadow p-4 w-1/2 mr-2">
+        {/*TODO: 样式修改 提示语添加对钩和叉号  提示语去完善资料*/}
+        <div className="flex justify-between w-full px-4 mb-4">
+          <div className="bg-gray-200  rounded-lg shadow p-4 w-1/2 mr-2">
             <div className="text-center">
               <img
                 alt="Placeholder image of a sad cloud indicating no messages"
                 className="mx-auto mb-2"
                 height="64"
-                src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-Oh52C6JB0xVCkEmM7TUMIROy.png?st=2024-02-03T08%3A10%3A45Z&amp;se=2024-02-03T10%3A10%3A45Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-03T05%3A33%3A11Z&amp;ske=2024-02-04T05%3A33%3A11Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=gBirZPIaMcARFAE6wNqBYWjABs/cSyPSr1VxLXUmOdE%3D"
                 width="64"
               />
               <p className="text-sm text-gray-500">无消息无法显示</p>
@@ -50,29 +49,25 @@ const CommendPersonTodo: React.FC = () => {
             </div>
           </div>
 
-          {/* <div className="bg-blue-600 text-white rounded-lg p-4 w-1/2 ml-2"> */}
-          <div className="bg-blue-600 rounded-lg shadow p-4 w-1/2 mr-2">
+          <div className="bg-blue-100 rounded-lg shadow p-4 w-1/2 mr-2">
             <div className="flex justify-between">
               <div className="flex -space-x-2">
                 <img
                   alt="Placeholder image of a user"
                   className="rounded-full border-2 border-white"
                   height="32"
-                  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-iYqbeOxZ2DZ1NJRDKCn8hssF.png?st=2024-02-03T08%3A10%3A47Z&amp;se=2024-02-03T10%3A10%3A47Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-03T02%3A18%3A32Z&amp;ske=2024-02-04T02%3A18%3A32Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=0f%2BQsTTfjRnanZi1nx%2BUUvmdNtonyRs8RbSvKG/951s%3D"
                   width="32"
                 />
                 <img
                   alt="Placeholder image of a user"
                   className="rounded-full border-2 border-white"
                   height="32"
-                  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-iYqbeOxZ2DZ1NJRDKCn8hssF.png?st=2024-02-03T08%3A10%3A47Z&amp;se=2024-02-03T10%3A10%3A47Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-03T02%3A18%3A32Z&amp;ske=2024-02-04T02%3A18%3A32Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=0f%2BQsTTfjRnanZi1nx%2BUUvmdNtonyRs8RbSvKG/951s%3D"
                   width="32"
                 />
                 <img
                   alt="Placeholder image of a user"
                   className="rounded-full border-2 border-white"
                   height="32"
-                  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-iYqbeOxZ2DZ1NJRDKCn8hssF.png?st=2024-02-03T08%3A10%3A47Z&amp;se=2024-02-03T10%3A10%3A47Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-03T02%3A18%3A32Z&amp;ske=2024-02-04T02%3A18%3A32Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=0f%2BQsTTfjRnanZi1nx%2BUUvmdNtonyRs8RbSvKG/951s%3D"
                   width="32"
                 />
               </div>

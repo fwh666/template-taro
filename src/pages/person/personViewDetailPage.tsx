@@ -1,6 +1,7 @@
 import routes from '@/routeConfig'
 import Taro from '@tarojs/taro'
 import React from 'react'
+import { AtAvatar } from 'taro-ui'
 
 const PersonViewDetailPage: React.FC = () => {
   const toPersonInfoPage = () => {
@@ -13,11 +14,11 @@ const PersonViewDetailPage: React.FC = () => {
     <div>
       <div className="max-w-sm mx-auto">
         <div className="relative">
+          <AtAvatar image="https://jdc.jd.com/img/200"></AtAvatar>
           <img
             alt="A person standing in front of a fence with a street sign reading 'QINYU Rd' in the background"
             className="w-full"
             height="416"
-            src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-bPxYzl3scJOnAm1gNz87jD4g/user-J1G3ILc1ZIqay44FXSxUp16W/img-CbV1eVihSfMDqgYezpSnc81X.png?st=2024-02-03T10%3A25%3A52Z&amp;se=2024-02-03T12%3A25%3A52Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-03T02%3A16%3A32Z&amp;ske=2024-02-04T02%3A16%3A32Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=ff0hjeH/iYApiFrRztf%2BoFxXCgmkoUTgdEYdW5ktXvs%3D"
             width="416"
           />
           <div className="absolute bottom-0 left-0 p-2">
