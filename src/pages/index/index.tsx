@@ -2,8 +2,6 @@ import { View } from '@tarojs/components'
 import Taro, { useLoad, useRouter } from '@tarojs/taro'
 import { useState } from 'react'
 
-import LoginPage from '../login/loginPage'
-import PersonBasePage from '../person/personBasePage'
 import './index.scss'
 
 export default function Index() {
@@ -33,7 +31,8 @@ export default function Index() {
     <View className="index">
       {/* <LoginPage isAgreed={isAgree}/> */}
       {/* <PersonBasePage/> */}
-      {isLogined ? <PersonBasePage /> : <LoginPage isAgreed={isAgree} />}
+      <View className="index">hhhah</View>
+      {/* {isLogined ? <PersonBasePage /> : <LoginPage isAgreed={isAgree} />} */}
       {/* {isLogined ? <UserAttributesPicker /> : <LoginPage isAgreed={isAgree} />} */}
       {/* {isLogined ? <PersonInfo /> : <LoginPage isAgreed={isAgree} />} */}
       {/* {isLogined ? <PersonAva /> : <LoginPage isAgreed={isAgree} />} */}
