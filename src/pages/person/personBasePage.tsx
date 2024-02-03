@@ -1,9 +1,10 @@
+import routes from '@/routeConfig'
 import Taro from '@tarojs/taro'
 import React from 'react'
-const PersonBase: React.FC = () => {
+const PersonBasePage: React.FC = () => {
   const toBaseInfo = () => {
     Taro.navigateTo({
-      url: '/pages/myself/personBaseInfoPage'
+      url: `/${routes.personInfo}`
     })
   }
 
@@ -58,4 +59,4 @@ const PersonBase: React.FC = () => {
   )
 }
 
-export default PersonBase
+export default PersonBasePage

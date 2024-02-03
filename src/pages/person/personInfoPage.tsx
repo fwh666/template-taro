@@ -1,3 +1,4 @@
+import routes from '@/routeConfig'
 import { Button, Picker, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
@@ -126,12 +127,13 @@ function getStarSign(dateString: string) {
   return signs[month - (day < days[month - 1] ? 1 : 0)]
 }
 
-const PersonInfo = () => {
+const PersonInfoPage = () => {
   const [attributes, setAttributes] = useState(initialAttributes)
   const [openStates, setOpenStates] = useState(initialOpenStates)
   const toPersonAva = () => {
     Taro.redirectTo({
-      url: '/pages/myself/personBaseAvaPage'
+      // url: '/pages/person/personAvaPage'
+      url: `/${routes.personAva}`
     })
   }
 
@@ -235,4 +237,4 @@ const PersonInfo = () => {
   )
 }
 
-export default PersonInfo
+export default PersonInfoPage
