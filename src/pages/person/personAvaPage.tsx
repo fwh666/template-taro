@@ -8,10 +8,11 @@ const PersonAvaPage: React.FC = () => {
   const [desc, setDesc] = useState('')
 
   const toCommend = () => {
-    Taro.navigateTo({
-      // url: '/pages/commend/commend'
-      url: `/${routes.commend}`
-    })
+    // Taro.navigateTo({
+    //   // url: '/pages/commend/commend'
+    //   // url: `/${routes.commend}`
+    // })
+    Taro.switchTab({ url: `/${routes.personIndex}` })
   }
 
   const handleChooseImage = () => {
@@ -79,9 +80,9 @@ const PersonAvaPage: React.FC = () => {
         </div>
 
         <div className="mt-6">
-          <button className="w-full bg-blue-500 text-white py-3 rounded-lg text-sm"
-          onClick={toCommend}
-          >下一步</button>
+          <button className="w-full bg-blue-500 text-white py-3 rounded-lg text-sm" onClick={toCommend}>
+            下一步
+          </button>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default defineAppConfig({
     backgroundColor: '#fff',
     list: [
       {
-        pagePath: 'pages/commend/commend',
+        pagePath: 'pages/index/index',
         text: '推荐',
         iconPath: './images/icon/home.png',
         selectedIconPath: './images/icon/home_selected.png'
@@ -41,7 +41,7 @@ export default defineAppConfig({
         selectedIconPath: './images/icon/home_selected.png'
       },
       {
-        pagePath: 'pages/index/index',
+        pagePath: 'pages/person/personIndex',
         text: '我的',
         iconPath: './images/icon/home.png',
         selectedIconPath: './images/icon/home_selected.png'

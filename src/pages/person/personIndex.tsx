@@ -1,11 +1,21 @@
-import React from 'react';
-
+import { View } from '@tarojs/components'
+import React, { useState } from 'react'
+import PersonBasePage from './personBasePage'
+import PersonViewPage from './personViewPage'
 const PersonIndex: React.FC = () => {
+  const [isPersonComplete, setPersonComplete] = useState<boolean>(true)
+
   return (
     <div>
-     我的主页 
+      {isPersonComplete ? (
+        <View>
+          <PersonViewPage />
+        </View>
+      ) : (
+        <PersonBasePage />
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default PersonIndex;
+export default PersonIndex
