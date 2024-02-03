@@ -1,7 +1,7 @@
 import PersonBaseAva from '@/components/myself/personBaseAva'
 import React from 'react'
 
-const PersonBaseInfoPage: React.FC = () => {
+const PersonBaseAvaPage: React.FC = () => {
   return (
     <div>
       <PersonBaseAva />
@@ -9,4 +9,4 @@ const PersonBaseInfoPage: React.FC = () => {
   )
 }
 
-export default PersonBaseInfoPage
+export default PersonBaseAvaPage

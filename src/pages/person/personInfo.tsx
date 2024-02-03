@@ -10,6 +10,7 @@ import {
   AtModalContent,
   AtModalHeader
 } from 'taro-ui'
+import 'taro-ui/dist/style/index.scss'
 
 const userAttributes = {
   手动输入: {
@@ -125,7 +126,7 @@ function getStarSign(dateString: string) {
   return signs[month - (day < days[month - 1] ? 1 : 0)]
 }
 
-const UserAttributesPicker = () => {
+const PersonInfo = () => {
   const [attributes, setAttributes] = useState(initialAttributes)
   const [openStates, setOpenStates] = useState(initialOpenStates)
   const toPersonAva = () => {
@@ -176,9 +177,14 @@ const UserAttributesPicker = () => {
         <div className="text-xs text-center text-gray-500 mt-1">一勾APP是一个严谨、全面的交友平台，请认真填写资料</div>
       </div>
       <div className="bg-white rounded-lg shadow p-4 mt-4">
-        <div className="flex justify-between items-center">
-          <div className="text-blue-600">基本资料</div>
-          <div className="text-gray-400">头像随时</div>
+        <div className="flex justify-between items-center mt-4">
+          <a href="#" className="bg-blue-600 text-white py-1 px-4 rounded-full text-sm link-effect">
+            基本资料
+          </a>
+          <a href="#" className="bg-purple-300 text-white py-1 px-4 rounded-full text-sm link-effect">
+            头像照片
+          </a>
+          <button className="bg-blue-600 text-white py-1 px-4 rounded-full text-sm">三重认证</button>
         </div>
         <div className="mt-4">
           <View>
@@ -229,4 +235,4 @@ const UserAttributesPicker = () => {
   )
 }
 
-export default UserAttributesPicker
+export default PersonInfo

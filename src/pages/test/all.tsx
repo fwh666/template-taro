@@ -10,6 +10,7 @@ import {
   AtModalContent,
   AtModalHeader
 } from 'taro-ui'
+import 'taro-ui/dist/style/index.scss'
 
 const userAttributes = {
   手动输入: {
@@ -221,8 +222,9 @@ const UserAttributesPicker = () => {
             ))}
           </View>
         </div>
-        <button className="bg-blue-600 text-white rounded-full py-3 mt-6 w-full" onClick={toPersonAva}>
-          下一步
+        <button className="bg-blue-600 text-white rounded-full py-3 mt-6 w-full"
+                onClick={toPersonAva}
+        >下一步
         </button>
       </div>
     </div>
