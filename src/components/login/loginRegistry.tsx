@@ -7,8 +7,10 @@ interface ChildProps {
 }
 
 const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
-  console.log('isAgreed:', porps.isAgreed)
-  const isAgreed = porps.isAgreed
+  // console.log('isAgreed:', porps.isAgreed)
+  // const isAgreed = porps.isAgreed
+
+  // const [isChecked, setIsChecked] = useState(false)
   const [isOpenedPrivacy, setIsOpenedPrivacy] = useState(false)
   const [isAgreePrivacy, setIsAgreePrivacy] = useState<boolean>(false)
 
@@ -17,10 +19,8 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
     setIsAgreePrivacy(true)
   }
 
-  const [isChecked, setIsChecked] = useState(false)
-
   const handleCheckboxChange = (event) => {
-    setIsChecked(event.target.checked)
+    setIsAgreePrivacy(event.target.checked)
     if (event.target.checked) {
       console.log('复选框已勾选')
     } else {
@@ -48,13 +48,10 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
     console.log('打开隐私提示')
     // 弹出隐私同意窗口
     toPrivatePage()
-    // Taro.redirectTo({
-    //   url: '/pages/private/privatePage'
-    // })
   }
 
   // 同意后-微信登录
-  if (isAgreed) {
+  if (isAgreePrivacy) {
     console.log('开始微信登录')
     // 校验是否已经登录态
     const loginCode = Taro.getStorageSync('loginCode')
@@ -140,9 +137,10 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
         </View>
         <View className="mt-8">
           <Button
-            disabled={false}
-            className="inline-block bg-blue-600 text-white w-1/2 flex justify-center py-3 rounded-lg font-semibold border-e px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-700 focus:relative"
-            onClick={handleOpenPrivacy}>
+            disabled={!isAgreePrivacy}
+            className={`w-1/2 flex justify-center rounded-lg px-4 py-2 text-white bg-blue-500 ${isAgreePrivacy ? 'hover:bg-blue-600' : 'opacity-50 cursor-not-allowed'}`}
+            // className="inline-block bg-blue-600 text-white w-1/2 flex justify-center py-3 rounded-lg font-semibold border-e px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-700 focus:relative"
+            onClick={isAgreePrivacy ? handleOpenPrivacy : () => {}}>
             微信快捷登录/注册
           </Button>
         </View>
@@ -153,7 +151,7 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
             type="checkbox"
             value=""
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            checked={isChecked}
+            checked={isAgreePrivacy}
             onChange={handleCheckboxChange}
           />
           {/* <span className='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>同意《用户服务协议》和《隐私保护指引》</span> */}
@@ -164,25 +162,6 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
             </a>
           </label>
         </View>
-
-        {/* <div className="flex items-center">
-          <input
-            id="link-checkbox"
-            type="checkbox"
-            value=""
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            // onClick={() => setIsAgreePrivacy(true)}
-            // onClick={handleIsAgreed}
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-          />
-          <label for="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            我同意{' '}
-            <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
-              条款和条件
-            </a>
-          </label>
-        </div> */}
       </View>
     </View>
   )

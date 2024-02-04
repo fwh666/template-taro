@@ -1,11 +1,10 @@
-import {View} from '@tarojs/components'
-import Taro, {useLoad, useRouter} from '@tarojs/taro'
-import {useState} from 'react'
+import { View } from '@tarojs/components'
+import Taro, { useLoad, useRouter } from '@tarojs/taro'
+import { useState } from 'react'
 
 import CommendIndex from '../commend/commendIndex'
 import LoginPage from '../login/loginPage'
 import './index.scss'
-import PageCheckbox from "@/pages/test/test"
 
 export default function Index() {
   useLoad(() => {
