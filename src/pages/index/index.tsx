@@ -1,17 +1,16 @@
 import { View } from '@tarojs/components'
-import Taro, { useLoad, useRouter } from '@tarojs/taro'
-import { useState } from 'react'
+import Taro, { useRouter } from '@tarojs/taro'
+import { useEffect, useState } from 'react'
 
 import CommendIndex from '../commend/commendIndex'
 import LoginPage from '../login/loginPage'
 import './index.scss'
 
 export default function Index() {
-  useLoad(() => {
+  useEffect(() => {
+    console.log('useEffect')
     isLoggedCheck()
-    console.log('Page loaded.')
   })
-
   const [isLogged, setIsLogged] = useState<boolean>(true)
 
   // 校验登录状态信息
@@ -29,6 +28,7 @@ export default function Index() {
 
   const router = useRouter()
   const isAgree: any = router.params.isAgree
+  console.log('isAgree', isAgree)
 
   return (
     <View className="index">
@@ -37,7 +37,7 @@ export default function Index() {
       {/* <CommendIndex /> */}
       {/* {isLogined ? <PersonBasePage /> : <LoginPage isAgreed={isAgree} />} */}
       {/* {isLogined ? <UserAttributesPicker /> : <LoginPage isAgreed={isAgree} />} */}
-      {isLogged ? <CommendIndex/> : <LoginPage isAgreed={isAgree}/>}
+      {isLogged ? <CommendIndex /> : <LoginPage isAgreed={isAgree} />}
       {/*{isLogged ? <CommendIndex/> : <PageCheckbox/>}*/}
       {/* {isLogined ? <PersonAva /> : <LoginPage isAgreed={isAgree} />} */}
       {/* {isLogined ? <UserInfo /> : <LoginPage isAgreed={isAgree} />} */}
