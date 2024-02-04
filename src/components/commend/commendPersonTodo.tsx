@@ -95,7 +95,13 @@ const CommendPersonTodo: React.FC = () => {
         </div>
 
         <div className="px-4 mb-4">
-          <button className="bg-blue-600 text-white w-full py-3 rounded-lg font-semibold" onClick={toPersonBase}>
+          {/*<button className="bg-blue-600 text-white w-full py-3 rounded-lg font-semibold" onClick={toPersonBase}>*/}
+          {/*  完善资料*/}
+          {/*</button>*/}
+          <button
+            className="inline-block bg-blue-600 text-white w-1/2 flex justify-center py-3 rounded-lg font-semibold border-e px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-700 focus:relative"
+            onClick={toPersonBase}
+          >
             完善资料
           </button>
         </div>
