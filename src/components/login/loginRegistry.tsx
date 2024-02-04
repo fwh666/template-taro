@@ -1,6 +1,7 @@
 import { Button, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
+
 interface ChildProps {
   isAgreed: boolean
 }
@@ -10,6 +11,23 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
   const isAgreed = porps.isAgreed
   const [isOpenedPrivacy, setIsOpenedPrivacy] = useState(false)
   const [isAgreePrivacy, setIsAgreePrivacy] = useState<boolean>(false)
+
+  const [list, setList] = useState([
+    { value: 'option1', label: '选项1', checked: false },
+    { value: 'option2', label: '选项2', checked: true },
+    { value: 'option3', label: '选项3', checked: false }
+  ])
+
+  const handleChange = (value) => {
+    setList(
+      list.map((item) => {
+        if (item.value === value) {
+          item.checked = !item.checked
+        }
+        return item
+      })
+    )
+  }
 
   const toCommend = () => {
     Taro.navigateTo({
@@ -126,10 +144,26 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
             微信快捷登录/注册
           </Button>
         </View>
-        <View className="text-center text-gray-600 text-sm mt-8 mb-4">隐私条款</View>
+        {/* <View className="text-center text-gray-600 text-sm mt-8 mb-4">隐私条款</View> */}
         <View className="text-center text-gray-600 text-sm">
           <span>同意《用户服务协议》和《隐私保护指引》</span>
         </View>
+        
+
+        <div className="flex flex-row-reverse items-center">
+          <input
+            id="link-checkbox"
+            type="checkbox"
+            value=""
+            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label htmlFor="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            我同意{' '}
+            <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
+              条款和条件
+            </a>
+          </label>
+        </div>
       </View>
     </View>
   )

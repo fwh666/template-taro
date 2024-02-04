@@ -1,16 +1,17 @@
-import LoginRegistry from '@/components/login/loginRegistry';
-import React from 'react';
+import LoginRegistry from '@/components/login/loginRegistry'
+import React from 'react'
 
 interface ChildProps {
   isAgreed: boolean
 }
+
 const LoginPage: React.FC<ChildProps> = (porps: any) => {
-  
-  console.log('isAgreed:',porps.isAgreed);
-  
+
+  console.log('isAgreed:', porps.isAgreed)
+
   return (
-    <div>
-      <LoginRegistry isAgreed={porps.isAgreed} />
+    <div className="bg-gradient">
+      <LoginRegistry isAgreed={porps.isAgreed}/>
     </div>
   )
 }
