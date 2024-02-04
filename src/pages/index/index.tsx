@@ -1,15 +1,12 @@
-import { Button, View } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import Taro, { useRouter } from '@tarojs/taro'
 import { useEffect, useState } from 'react'
 
+import CommendPersonTodo from '@/components/commend/commendPersonTodo'
+import MySwiper from '@/components/home/swiper/MySwiper'
 import CommendIndex from '../commend/commendIndex'
 import LoginPage from '../login/loginPage'
 import './index.scss'
-import WeChatTest from '../test/test'
-import MySwiper from '@/components/home/swiper/MySwiper'
-import { AtButton } from 'taro-ui'
-import request from '@/utils/request'
-import Route
 
 export default function Index() {
   useEffect(() => {
@@ -18,7 +15,25 @@ export default function Index() {
     // isRegisterCheck()
     isLoggedCheck()
   })
+
+  useEffect(() => {
+    console.log('useEffect')
+    // 监听事件，当收到名为 'switchToHome' 的事件时触发 useEffect
+    Taro.eventCenter.on('switchToHome', () => {
+      console.log('Received switchToHome event');
+      isLoggedCheck()
+      // 触发 useEffect
+    });
+
+    // 在组件卸载时取消事件监听
+    return () => {
+      Taro.eventCenter.off('switchToHome');
+    };
+  }, []);
+
+
   const [isLogged, setIsLogged] = useState<boolean>(false)
+  const [loginStatus, setLoginStatus] = useState<number>(0)
   const [isRegistered, setIsRegistered] = useState<boolean>(false)
 
   const isRegisterCheck = () => {
@@ -63,15 +78,12 @@ export default function Index() {
   // 校验登录状态信息
   const isLoggedCheck = () => {
     const loginCode = Taro.getStorageSync('LoginStatus')
+    setLoginStatus(loginCode)
     if (loginCode) {
       console.log('isLogged')
       setIsLogged(true)
-    } else {
-      console.log('notLogged')
-      setIsLogged(false)
     }
   }
-
 
   const router = useRouter()
   const isAgree: any = router.params.isAgree
@@ -79,8 +91,28 @@ export default function Index() {
 
   return (
     <View className="index">
+      {/* <Router>
+      <Switch>
+        <Routes exact path="/">
+          {isLogged === 1 ? <Redirect to="/page-one" /> : (isLogged === 2 ? <Redirect to="/page-two" /> : <Redirect to="/page-three" />)}
+        </Route>
+        <Route path="/page-one" component={PageOne} />
+        <Route path="/page-two" component={PageTwo} />
+        <Route path="/page-three" component={PageThree} />
+      </Switch>
+    </Router> */}
+
       {/* 登录态？推荐页：登录页面 */}
-      {isLogged ? <CommendIndex /> : <LoginPage isAgreed={isAgree} />}
+      {/* // TODO: 1-注册登录初始化 2-登录资料不完整 3-登录资料完整 */}
+      {loginStatus === 1 ? (
+        <MySwiper />
+      ) : loginStatus === 2 ? (
+        <CommendPersonTodo />
+      ) : loginStatus === 3 ? (
+        <CommendIndex />
+      ) : (
+        <LoginPage isAgreed={isAgree} />
+      )}
 
       {/* TODO: 没有登录，跳转登录首页；已经登录跳转推荐页 */}
       {/* {isLogged === false && isRegistered === false ? <CommendIndex /> : <LoginPage isAgreed={isAgree} />} */}
@@ -89,29 +121,3 @@ export default function Index() {
     </View>
   )
 }
-
-
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-// import PageOne from './PageOne';
-// import PageTwo from './PageTwo';
-// import PageThree from './PageThree';
-
-// function App() {
-//   let isLogged = 1; // 假设 isLogged 是一个代表登录状态的变量
-
-//   return (
-//     <Router>
-//       <Switch>
-//         <Route exact path="/">
-//           {isLogged === 1 ? <Redirect to="/page-one" /> : (isLogged === 2 ? <Redirect to="/page-two" /> : <Redirect to="/page-three" />)}
-//         </Route>
-//         <Route path="/page-one" component={PageOne} />
-//         <Route path="/page-two" component={PageTwo} />
-//         <Route path="/page-three" component={PageThree} />
-//       </Switch>
-//     </Router>
-//   );
-// }
-
-// export default App;

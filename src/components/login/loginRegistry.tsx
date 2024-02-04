@@ -43,12 +43,12 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
   }
 
   // 校验是否已经登录态
-  const loginCode = Taro.getStorageSync('loginCode')
-  if (loginCode) {
-    // 已经登录态
-    console.log('已经登录态')
-    toPersonBase()
-  }
+  // const loginCode = Taro.getStorageSync('loginCode')
+  // if (loginCode) {
+  //   // 已经登录态
+  //   console.log('已经登录态')
+  //   toPersonBase()
+  // }
 
   return (
     <View>

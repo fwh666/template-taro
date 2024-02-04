@@ -1,9 +1,8 @@
 import CommendHome from '@/components/commend/commendHome'
-import CommendPersonTodo from '@/components/commend/commendPersonTodo'
-import React, { useState } from 'react'
+import React from 'react'
 // 推荐页面
 const CommendIndex: React.FC = () => {
-  const [isPersonComplete, setPersonComplete] = useState<boolean>(false)
+  // const [isPersonComplete, setPersonComplete] = useState<boolean>(false)
 
   // const toPersonBase = () => {
   //   Taro.navigateTo({
@@ -13,7 +12,8 @@ const CommendIndex: React.FC = () => {
   return (
     <div>
       {/* TODO: 资料？调整完善页面 */}
-      {isPersonComplete ? <CommendHome /> : <CommendPersonTodo />}
+      {/* {isPersonComplete ? <CommendHome /> : <CommendPersonTodo />} */}
+      <CommendHome />
     </div>
   )
 }

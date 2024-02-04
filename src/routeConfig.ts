@@ -8,7 +8,7 @@ const routes = {
   // 隐私提示
   private: 'pages/private/privatePage',
   // 推荐页
-  commendIndex: 'pages/commend/commendIndex',
+  // commendIndex: 'pages/commend/commendIndex',
 
   
   // 其他页面路径-tar

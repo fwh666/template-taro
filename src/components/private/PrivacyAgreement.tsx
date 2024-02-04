@@ -12,18 +12,19 @@ interface ChildComponentProps {
 const PrivacyAgreement: React.FC<ChildComponentProps> = ({ sendDataToParent }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false)
 
-  const toCommend = () => {
-    // Taro.switchTab({
-    //   url: `/${routes.homeIndex}`
-    // })
-    Taro.navigateTo({
-      url: `/${routes.commendIndex}`
-    })
-  }
+  // const toCommend = () => {
+  //   // Taro.switchTab({
+  //   //   url: `/${routes.homeIndex}`
+  //   // })
+  //   Taro.navigateTo({
+  //     url: `/${routes.commendIndex}`
+  //   })
+  // }
 
   const toHomeIndex = () => {
+    Taro.eventCenter.trigger('switchToHome');
     Taro.switchTab({
-      url: `/${routes.homeIndex}`
+      url: `/${routes.homeIndex}`,
     })
   }
 
@@ -41,8 +42,8 @@ const PrivacyAgreement: React.FC<ChildComponentProps> = ({ sendDataToParent }) =
         if (res.code) {
           console.log('code:', res.code)
           // 登录成功-存储-跳转首页tar
-          Taro.setStorageSync('loginCode', 'loginCode')
-          console.log('登录成功')
+          // Taro.setStorageSync('loginCode', 'loginCode')
+          // console.log('登录成功')
           // 传递父类
           // sendDataToParent(true)
           // toCommend()
@@ -77,6 +78,9 @@ const PrivacyAgreement: React.FC<ChildComponentProps> = ({ sendDataToParent }) =
         } else {
           console.log('登录失败！' + res.errMsg)
         }
+      },
+      fail: function (err) {
+        console.log('登录失败！', err)
       }
     })
   }
