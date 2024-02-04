@@ -12,21 +12,20 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
   const [isOpenedPrivacy, setIsOpenedPrivacy] = useState(false)
   const [isAgreePrivacy, setIsAgreePrivacy] = useState<boolean>(false)
 
-  const [list, setList] = useState([
-    { value: 'option1', label: '选项1', checked: false },
-    { value: 'option2', label: '选项2', checked: true },
-    { value: 'option3', label: '选项3', checked: false }
-  ])
+  const handleIsAgreed = () => {
+    console.log('点击同意')
+    setIsAgreePrivacy(true)
+  }
 
-  const handleChange = (value) => {
-    setList(
-      list.map((item) => {
-        if (item.value === value) {
-          item.checked = !item.checked
-        }
-        return item
-      })
-    )
+  const [isChecked, setIsChecked] = useState(false)
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked)
+    if (event.target.checked) {
+      console.log('复选框已勾选')
+    } else {
+      console.log('复选框已取消勾选')
+    }
   }
 
   const toCommend = () => {
@@ -140,30 +139,50 @@ const LoginRegistry: React.FC<ChildProps> = (porps: any) => {
           </View>
         </View>
         <View className="mt-8">
-          <Button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold" onClick={handleOpenPrivacy}>
+          <Button
+            disabled={false}
+            className="inline-block bg-blue-600 text-white w-1/2 flex justify-center py-3 rounded-lg font-semibold border-e px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-700 focus:relative"
+            onClick={handleOpenPrivacy}>
             微信快捷登录/注册
           </Button>
         </View>
         {/* <View className="text-center text-gray-600 text-sm mt-8 mb-4">隐私条款</View> */}
-        <View className="text-center text-gray-600 text-sm">
-          <span>同意《用户服务协议》和《隐私保护指引》</span>
-        </View>
-        
-
-        <div className="flex flex-row-reverse items-center">
+        <View className="flex items-center">
           <input
             id="link-checkbox"
             type="checkbox"
             value=""
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
           />
-          <label htmlFor="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+          {/* <span className='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'>同意《用户服务协议》和《隐私保护指引》</span> */}
+          <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            我同意
+            <a href="#" className="bottom-2 right-48 text-blue-600 dark:text-blue-500 hover:underline">
+              《用户服务协议》和《隐私保护指引》
+            </a>
+          </label>
+        </View>
+
+        {/* <div className="flex items-center">
+          <input
+            id="link-checkbox"
+            type="checkbox"
+            value=""
+            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            // onClick={() => setIsAgreePrivacy(true)}
+            // onClick={handleIsAgreed}
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+          <label for="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
             我同意{' '}
             <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
               条款和条件
             </a>
           </label>
-        </div>
+        </div> */}
       </View>
     </View>
   )
