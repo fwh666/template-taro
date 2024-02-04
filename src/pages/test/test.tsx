@@ -1,21 +1,26 @@
-import { useState } from 'react'
+import request from '@/utils/request'
+import { Button } from '@tarojs/components'
+export default function WeChatTest() {
+  const test = () => {
+    // 定义一个函数用于发送POST请求
 
-export default function YourComponent() {
-  const [isAgreed, setIsAgreed] = useState(false)
+    // 模拟发送POST请求的示例
+    let url = 'https://reqbin.com/echo/post/json'
+    let data = {
+      userId: 1,
+      title: 'Fix my bugs',
+      completed: false
+    }
+    let contentType = 'application/json'
 
-  const handleClick = () => {
-    // 这里是点击按钮后需要执行的代码
+    // 调用post函数发送POST请求
+    const res = request.post(url, data, contentType)
+    console.log(res)
   }
 
   return (
     <div>
-      <input type="checkbox" onChange={(event) => setIsAgreed(event.target.checked)} />
-      <button
-        className={`px-4 py-2 text-white bg-blue-500 ${isAgreed ? 'hover:bg-blue-600' : 'opacity-50 cursor-not-allowed'}`}
-        disabled={!isAgreed}
-        onClick={isAgreed ? handleClick : () => {}}>
-        Agree and Continue
-      </button>
+      <Button onClick={test}>WeChatTest</Button>
     </div>
   )
 }

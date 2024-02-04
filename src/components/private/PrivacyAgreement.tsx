@@ -21,6 +21,12 @@ const PrivacyAgreement: React.FC<ChildComponentProps> = ({ sendDataToParent }) =
     })
   }
 
+  const toHomeIndex = () => {
+    Taro.switchTab({
+      url: `/${routes.homeIndex}`
+    })
+  }
+
   const handleShowModal = () => {
     setIsOpened(true)
   }
@@ -38,32 +44,36 @@ const PrivacyAgreement: React.FC<ChildComponentProps> = ({ sendDataToParent }) =
           Taro.setStorageSync('loginCode', 'loginCode')
           console.log('登录成功')
           // 传递父类
-          sendDataToParent(true)
-          toCommend()
+          // sendDataToParent(true)
+          // toCommend()
           //发起网络请求
-          // Taro.request({
-          //   url: 'http://127.0.0.1:8080/xd/wx/login',
-          //   method: 'POST',
-          //   header: {
-          //     'content-type': 'application/json'
-          //   },
-          //   data: {
-          //     code: res.code
-          //   },
-          //   success: function (res) {
-          //     console.log(res.data)
-          //     const openid = res.data.openid
-          //     const session_key = res.data.session_key
-          //     console.log(openid)
-          //     console.log(session_key)
-          //     // 登录成功-存储-跳转首页tar
-          //     Taro.setStorageSync('loginCode', 'loginCode')
-          //     toCommend()
-          //   },
-          //   fail: function (err) {
-          //     console.log(err)
-          //   }
-          // })
+          Taro.request({
+            url: 'http://127.0.0.1:8080/xd/wx/login',
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'
+            },
+            data: {
+              code: res.code
+            },
+            success: function (res) {
+              console.log(res.data)
+              // TODO: 用户唯一ID和微信ID绑定，返回唯一ID。 openId查询uid
+              const uid = res.data.uid
+              const registered = res.data.registered
+              const logined = res.data.logined
+              const LoginStatus = res.data.loginStatus
+              console.log(uid, registered, logined, LoginStatus)
+              // 登录成功-存储-跳转首页tar
+              // TODO: 注册成功-跳转注册页； 登录成功-跳转完善资料页
+              // TODO: 1-注册登录初始化 2-登录资料不完整 3-登录资料完整
+              Taro.setStorageSync('LoginStatus', LoginStatus)
+              toHomeIndex()
+            },
+            fail: function (err) {
+              console.log(err)
+            }
+          })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
