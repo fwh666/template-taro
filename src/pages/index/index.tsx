@@ -7,6 +7,7 @@ import MySwiper from '@/components/home/swiper/MySwiper'
 import CommendIndex from '../commend/commendIndex'
 import LoginPage from '../login/loginPage'
 import './index.scss'
+import Demo from '../test/demo/demo'
 
 export default function Index() {
   useEffect(() => {
@@ -105,6 +106,7 @@ export default function Index() {
       {/* 登录态？推荐页：登录页面 */}
       {/* // TODO: 1-注册登录初始化 2-登录资料不完整 3-登录资料完整 */}
       {loginStatus === 1 ? (
+        // <Demo/>
         <MySwiper />
       ) : loginStatus === 2 ? (
         <CommendPersonTodo />
