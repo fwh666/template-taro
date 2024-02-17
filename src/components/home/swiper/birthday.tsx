@@ -1,11 +1,21 @@
 import { View } from '@tarojs/components'
-import React from 'react'
+import React, { useState } from 'react'
 import BirthDatePicker from './birthDatePicker'
+import { useSharedState } from './MyContext'
 
 const BirthdayPage: React.FC = () => {
+  const { setSharedState } = useSharedState()
+  const [selectYear, setSelectYear] = useState<string>('')
   const handleYearChange = (selectedYear: string) => {
     console.log(`Selected year: ${selectedYear}`)
+    setSelectYear(selectYear)
   }
+  // 修改共享状态的值
+  setSharedState((prevState) => ({
+    ...prevState,
+    birthday: selectYear
+  }))
+
   return (
     <div>
       <div className="px-4 py-2">

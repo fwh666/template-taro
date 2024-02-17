@@ -1,9 +1,11 @@
 import Taro from '@tarojs/taro'
 import React, { useState } from 'react'
 import { AtButton } from 'taro-ui'
+import { useSharedState } from './MyContext'
 
 const AvaImage: React.FC = () => {
   const [avatar, setAvatar] = useState('')
+  const { setSharedState } = useSharedState()
   const chooseAndUploadImage = async () => {
     try {
       const chooseImageRes = await Taro.chooseImage({
@@ -26,6 +28,10 @@ const AvaImage: React.FC = () => {
       const data = uploadRes.data // 上传成功后的返回数据
       console.log(data)
       // 处理上传成功后的逻辑
+      setSharedState((prevState) => ({
+        ...prevState,
+        avatar: data
+      }))
     } catch (error) {
       // 处理选择或上传图片过程中的错误
     }

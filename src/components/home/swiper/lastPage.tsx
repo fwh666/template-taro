@@ -9,8 +9,14 @@ export default function LastPage() {
 
   return (
     <div>
-      <p>Shared Value: {sharedState.value1}</p>
-      <p>Shared Value: {sharedState.value2}</p>
+      {/* <p>Shared Value: {sharedState.value1}</p> */}
+      <ul>
+        {Object.entries(sharedState).map(([key, value]) => (
+          <li key={key}>
+            <strong>{key}:</strong> {value}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

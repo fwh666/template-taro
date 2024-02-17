@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
+import { useSharedState } from './MyContext'
 
 const Gender: React.FC = () => {
+  const { setSharedState } = useSharedState()
   const [selectedGender, setSelectedGender] = useState<string | null>(null)
 
   const handleClick = (gender: string) => {
     setSelectedGender(gender)
     console.log('选择了', gender)
+    // 修改共享状态的值
+    setSharedState((prevState) => ({
+      ...prevState,
+      gender:gender
+    }))
   }
+  
 
   return (
     <div>

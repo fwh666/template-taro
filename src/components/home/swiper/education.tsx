@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
+import { useSharedState } from './MyContext'
 
 const Educiton: React.FC = () => {
+  const { setSharedState } = useSharedState()
   const [selectedEducation, setSelectedEducation] = useState<string>('')
   const handleClick = (education: string) => {
     setSelectedEducation(education)
     console.log('选择了', education)
+    // 修改共享状态的值
+    // 修改共享状态的值
+    setSharedState((prevState) => ({
+      ...prevState,
+      education:education
+    }))
   }
+
   return (
     <div>
       <div className="px-4 py-2">
